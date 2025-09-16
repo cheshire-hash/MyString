@@ -7,4 +7,7 @@ int main() {
 	obj1.Print();
 	MyString obj2 = obj1;
 	obj2.Print();
+	MyString obj3("World");
+	obj2.MyStrCopy(obj3);
+	obj2.Print();
 }
