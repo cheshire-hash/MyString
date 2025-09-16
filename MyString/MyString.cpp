@@ -56,6 +56,9 @@ int MyString::MyChr(char c)
 
 MyString MyString::MyStrCopy(const MyString& obj)
 {
+	str  = new char[strlen(obj.str)]; //or [strlen(len) + 1]
+	strcpy_s(str, strlen(obj.str), obj.str); //or strlen(len) + 1
+	lenght = obj.lenght;   
 	return MyString();
 }
 
