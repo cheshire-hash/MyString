@@ -12,5 +12,6 @@ int main() {
 	obj2.Print();
 	int rez = obj2.MyChr('r');
 	cout << rez;
-
+	obj1.MyStrCat(obj3);
+	obj1.Print();
 }

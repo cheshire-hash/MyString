@@ -69,6 +69,21 @@ void MyString::MyStrCopy(const MyString& obj)
 	lenght = obj.lenght;   
 }
 
+void MyString::MyStrCat(MyString& b)
+{
+	int intforspace = 1;
+	int newLen = lenght + b.lenght;
+	char* newStr = new char[newLen + intforspace + 1];
+	strcpy_s(newStr, lenght + intforspace + 1, str);
+	for (int i = 0; b.str[i] != '/0'; i++)
+	{
+		if (lenght > 0 && newLen > 0) {
+			newStr[lenght] = ' ';
+			newStr[lenght + 1 + i] = b.str[i];
+		}
+	}
+}
+
 void MyString::Print()
 {
 	cout << str << endl;
