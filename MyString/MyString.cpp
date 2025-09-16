@@ -29,8 +29,8 @@ MyString::~MyString()
 
 MyString::MyString(const MyString& st)
 {
-	str = new char[strlen(st.str)]; //or [strlen(len) + 1]
-	strcpy_s(str, strlen(st.str), st.str); //or strlen(len) + 1
+	str = new char[strlen(st.str) + 1]; //or [strlen(len) + 1]
+	strcpy_s(str, strlen(st.str) + 1, st.str); //or strlen(len) + 1
 	lenght = st.lenght;
 	cout << "Copy constructer";
 }
@@ -46,7 +46,7 @@ bool MyString::MyStrStrt(const char* str)
 
 int MyString::MyStrlen()
 {
-	return 
+	return 0;
 }
 
 int MyString::MyChr(char c)
@@ -54,11 +54,15 @@ int MyString::MyChr(char c)
 	return 0;
 }
 
-MyString MyString::MyStrCopy(const MyString& obj)
+void MyString::MyStrCopy(const MyString& obj)
 {
-	str  = new char[strlen(obj.str)]; //or [strlen(len) + 1]
-	strcpy_s(str, strlen(obj.str), obj.str); //or strlen(len) + 1
+	str  = new char[strlen(obj.str) + 1]; //or [strlen(len) + 1]
+	strcpy_s(str, strlen(obj.str) + 1, obj.str); //or strlen(len) + 1
 	lenght = obj.lenght;   
-	return MyString();
+}
+
+void MyString::Print()
+{
+	cout << str << endl;
 }
 
