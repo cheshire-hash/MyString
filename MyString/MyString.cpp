@@ -35,3 +35,12 @@ MyString::MyString(const MyString& st)
 	cout << "Copy constructer";
 }
 
+bool MyString::MyStrStrt(const char* str)
+{
+	const char* s = strstr(this->str, str);
+	if (s != nullptr) {
+		return true;
+	}
+	return false;
+}
+

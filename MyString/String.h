@@ -9,6 +9,7 @@ public:
 	MyString(const char* st);
 	~MyString();
 	MyString(const MyString& obj);
+	bool MyStrStrt(const char* str);
  
 };
 
