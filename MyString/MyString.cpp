@@ -29,8 +29,8 @@ MyString::~MyString()
 
 MyString::MyString(const MyString& st)
 {
-	str = new char[strlen(st.str)];
-	strcpy_s(str, strlen(st.str), st.str);
+	str = new char[strlen(st.str)]; //or [strlen(len) + 1]
+	strcpy_s(str, strlen(st.str), st.str); //or strlen(len) + 1
 	lenght = st.lenght;
 	cout << "Copy constructer";
 }
