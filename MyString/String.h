@@ -11,6 +11,8 @@ public:
 	MyString(const MyString& obj);
 	bool MyStrStrt(const char* str);
 	int MyStrlen(); //возвращает длину строки
+	int  MyChr(char c);
+	MyString MyStrCopy(const MyString& obj); //копирование строк
  
 };
 
