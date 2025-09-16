@@ -46,7 +46,7 @@ bool MyString::MyStrStrt(const char* str)
 
 int MyString::MyStrlen()
 {
-	return lenght;
+	return 
 }
 
 int MyString::MyChr(char c)
