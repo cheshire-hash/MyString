@@ -10,4 +10,7 @@ int main() {
 	MyString obj3("World");
 	obj2.MyStrCopy(obj3);
 	obj2.Print();
+	int rez = obj2.MyChr('r');
+	cout << rez;
+
 }

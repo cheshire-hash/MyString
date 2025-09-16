@@ -51,16 +51,15 @@ int MyString::MyStrlen()
 
 int MyString::MyChr(char c)
 {
-	char* str = this->str;
-	for (int i = 0; i < lenght; i++)
+	char* s = this->str;
+	for (int i = 0; i < lenght + 1; i++)
 	{
-		if (str[i] == c) {
-			return str[i];
-		}
-		else {
-			return -1;
+		if (s[i] == c) {
+			return i;
 		}
 	}
+	return -1;
+
 }
 
 void MyString::MyStrCopy(const MyString& obj)
