@@ -27,3 +27,11 @@ MyString::~MyString()
 	lenght = 0;
 }
 
+MyString::MyString(const MyString& st)
+{
+	str = new char[strlen(st.str) + 1];
+	strcpy_s(str, strlen(st.str) + 1, st.str);
+	lenght = st.lenght;
+	cout << "Copy constructer";
+}
+

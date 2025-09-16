@@ -8,6 +8,7 @@ public:
 	MyString(int size);
 	MyString(const char* st);
 	~MyString();
+	MyString(const MyString& obj);
  
 };
 
