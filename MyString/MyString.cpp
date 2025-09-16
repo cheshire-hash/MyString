@@ -44,3 +44,8 @@ bool MyString::MyStrStrt(const char* str)
 	return false;
 }
 
+int MyString::MyStrlen()
+{
+
+}
+

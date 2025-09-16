@@ -10,6 +10,7 @@ public:
 	~MyString();
 	MyString(const MyString& obj);
 	bool MyStrStrt(const char* str);
+	int MyStrlen(); //возвращает длину строки
  
 };
 
