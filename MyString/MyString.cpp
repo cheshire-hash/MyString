@@ -54,3 +54,8 @@ int MyString::MyChr(char c)
 	return 0;
 }
 
+MyString MyString::MyStrCopy(const MyString& obj)
+{
+	return MyString();
+}
+
