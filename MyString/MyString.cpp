@@ -87,6 +87,12 @@ void MyString::MyStrCat(MyString& b)
 void MyString::MyDelChr(char c)
 {
 	int count = 0;
+
+	for (int i = 0; i < lenght + 1; i++) {
+		if (c == count) {
+			count++;
+		}
+	}
 	int newsize = lenght - count;
 	for (int i = 0; i < newsize; i++) {
 		char* newstr = new char[newsize + 1];
