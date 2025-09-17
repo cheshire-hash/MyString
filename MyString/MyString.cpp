@@ -89,3 +89,12 @@ void MyString::Print()
 	cout << str << endl;
 }
 
+MyString::MyString(MyString&& obj)
+{
+	lenght = obj.lenght;
+	obj.lenght = 0;
+	str = obj.str;
+	obj.str = nullptr;
+	cout << "Move constructor";
+}
+
