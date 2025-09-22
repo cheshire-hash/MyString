@@ -52,7 +52,7 @@ int MyString::MyStrlen()
 int MyString::MyChr(char c)
 {
 	char* s = this->str;
-	for (int i = 0; i < lenght + 1; i++)
+	for (int i = 0; i < lenght; i++)
 	{
 		if (s[i] == c) {
 			return i;
@@ -71,17 +71,38 @@ void MyString::MyStrCopy(const MyString& obj)
 
 void MyString::MyStrCat(MyString& b)
 {
-	int intforspace = 1;
-	int newLen = lenght + b.lenght;
-	char* newStr = new char[newLen + intforspace + 1];
-	strcpy_s(newStr, lenght + intforspace + 1, str);
-	for (int i = 0; b.str[i] != '/0'; i++)
+	int intForSpace = 1; // space between strings
+	int newLen = lenght + intForSpace + b.lenght;
+
+	char* newStr = new char[newLen + 1]; // +1 for null terminator
+	strcpy_s(newStr, newLen + 1, str);
+	newStr[lenght] = ' ';
+	strcpy_s(newStr + lenght + 1, b.lenght + 1, b.str);
+
+	// Delete old string and update object
+	delete[] str;
+	str = newStr;
+	lenght = newLen;
+}
+
+void MyString::MyDelChr(char c)
+{
+	int j = 0;
+	for (int i = 0; i < lenght; ++i)
 	{
-		if (lenght > 0 && newLen > 0) {
-			newStr[lenght] = ' ';
-			newStr[lenght + 1 + i] = b.str[i];
+		if (str[i] != c)
+		{
+			str[j] = str[i];
+			j++;
 		}
 	}
+	str[j] = '\0'; 
+	lenght = j;  
+}
+
+int MyString::MyStrCmp(MyString& b)
+{
+
 }
 
 void MyString::Print()
