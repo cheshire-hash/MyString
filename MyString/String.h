@@ -17,6 +17,7 @@ public:
 	void MyDelChr(char c); // удаляет указанный символ
 	int MyStrCmp(MyString& b); // сравнение строк
 	void Print();
+	MyString(MyString&& obj);
  
 };
 
