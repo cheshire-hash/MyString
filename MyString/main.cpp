@@ -14,8 +14,10 @@ int main() {
 	cout << rez;
 	obj1.MyStrCat(obj3);
 	obj1.Print();
-	//obj1.MyDelChr('l');
+	obj1.MyDelChr('l');
 	obj1.Print();
 	obj1.MyStrCmp(obj2);
+	MyString a = move(obj1);
+	a.Print();
 
 }
