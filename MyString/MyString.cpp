@@ -102,7 +102,19 @@ void MyString::MyDelChr(char c)
 
 int MyString::MyStrCmp(MyString& b)
 {
+	for (int i = 0; i < lenght; i++)
+	{
+		if (str[i] == b.str[0])
+		{
+			int k = 1;
+			while (k < b.lenght && str[i + k] == b.str[k])
+				k++;
 
+			if (k == b.lenght)
+				return i; 
+		}
+	}
+	return -1;
 }
 
 void MyString::MyDelChr(char c)
