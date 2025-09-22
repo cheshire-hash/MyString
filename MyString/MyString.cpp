@@ -102,45 +102,39 @@ void MyString::MyDelChr(char c)
 
 int MyString::MyStrCmp(MyString& b)
 {
-	for (int i = 0; i < lenght; i++)
-	{
-		if (str[i] == b.str[0])
-		{
-			int k = 1;
-			while (k < b.lenght && str[i + k] == b.str[k])
-				k++;
-
-			if (k == b.lenght)
-				return i; 
+	int i = 0;
+	while (str[i] == b.str[i]) {
+		if (str[i] == '\0' || b.str[i] == '\0') {
+			return str[i] - b.str[i];
 		}
-	}
-	return -1;
-}
-
-void MyString::MyDelChr(char c)
-{
-	int count = 0;
-
-	for (int i = 0; i < lenght + 1; i++) {
-		if (c == count) {
-			count++;
-		}
-	}
-	int newsize = lenght - count;
-	for (int i = 0; i < newsize; i++) {
-		char* newstr = new char[newsize + 1];
-		int j = 0;
-		for (int i = 0; i < lenght + 1; i++) {
-			if (str[j] != c) {
-				newstr[j] = str[i];
-				j++;
-			}
-		}
-		delete[] str;
-		str = newstr;
-		lenght = newsize;
+		i++;
 	}
 }
+
+//void MyString::MyDelChr(char c)
+//{
+//	int count = 0;
+//
+//	for (int i = 0; i < lenght + 1; i++) {
+//		if (c == count) {
+//			count++;
+//		}
+//	}
+//	int newsize = lenght - count;
+//	for (int i = 0; i < newsize; i++) {
+//		char* newstr = new char[newsize + 1];
+//		int j = 0;
+//		for (int i = 0; i < lenght + 1; i++) {
+//			if (str[j] != c) {
+//				newstr[j] = str[i];
+//				j++;
+//			}
+//		}
+//		delete[] str;
+//		str = newstr;
+//		lenght = newsize;
+//	}
+//}
 
 void MyString::Print()
 {
