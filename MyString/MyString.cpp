@@ -105,10 +105,11 @@ int MyString::MyStrCmp(MyString& b)
 	int i = 0;
 	while (str[i] == b.str[i]) {
 		if (str[i] == '\0' || b.str[i] == '\0') {
-			return str[i] - b.str[i];
+			break;
 		}
 		i++;
 	}
+	return str[i] - b.str[i];
 }
 
 //void MyString::MyDelChr(char c)
