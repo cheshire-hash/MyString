@@ -2,16 +2,20 @@
 #include<iostream> 
 using namespace std;
 
+int MyString::count = 0;
+
 MyString::MyString()
 {
 	lenght = 88;
 	str = new char[lenght] {};
+	count++;
 }
 
 MyString::MyString(int size)
 {
 	lenght = size;
 	str = new char[lenght] {};
+	count++;
 }
 
 MyString::MyString(const char* st)
@@ -19,12 +23,14 @@ MyString::MyString(const char* st)
 	lenght = strlen(st);
 	str = new char[lenght + 1];
 	strcpy_s(str, lenght + 1, st);
+	count++;
 }
 
 MyString::~MyString()
 {
 	delete[] str;
 	lenght = 0;
+	count--;
 }
 
 MyString::MyString(const MyString& st)
@@ -33,6 +39,7 @@ MyString::MyString(const MyString& st)
 	strcpy_s(str, strlen(st.str) + 1, st.str); //or strlen(len) + 1
 	lenght = st.lenght;
 	cout << "Copy constructer";
+	count++;
 }
 
 bool MyString::MyStrStrt(const char* str)
@@ -149,5 +156,16 @@ MyString::MyString(MyString&& obj)
 	str = obj.str;
 	obj.str = nullptr;
 	cout << "Move constructor";
+	count++;
+}
+
+int MyString::GetCount()
+{
+	return count;
+}
+
+void MyString::ShowCount()
+{
+	cout << MyString::GetCount() << endl;
 }
 

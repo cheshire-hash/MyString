@@ -1,6 +1,8 @@
 #pragma once
+static int count = 0;
 class MyString
 {
+	static int count;
 	char* str;
 	int lenght;
 public:
@@ -18,6 +20,8 @@ public:
 	int MyStrCmp(MyString& b); // сравнение строк
 	void Print();
 	MyString(MyString&& obj);
+	static int GetCount();
+	static void ShowCount();
  
 };
 
