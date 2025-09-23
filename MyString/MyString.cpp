@@ -1,9 +1,7 @@
 #include "String.h"
 #include<iostream> 
 using namespace std;
-
 int MyString::count = 0;
-
 MyString::MyString()
 {
 	lenght = 88;
@@ -71,6 +69,7 @@ int MyString::MyChr(char c)
 
 void MyString::MyStrCopy(const MyString& obj)
 {
+	delete[] str;
 	str  = new char[strlen(obj.str) + 1]; //or [strlen(len) + 1]
 	strcpy_s(str, strlen(obj.str) + 1, obj.str); //or strlen(len) + 1
 	lenght = obj.lenght;   

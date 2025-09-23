@@ -19,7 +19,7 @@ int main() {
 	obj1.MyStrCmp(obj2);
 	MyString a = move(obj1);
 	a.Print();
-	a.GetCount();
+	a.ShowCount();
 	
 
 }
