@@ -22,6 +22,8 @@ int main() {
 	a.ShowCount();
 	MyString b = a + obj2;
 	b.Print();
+	MyString c = b - "or";
+	c.Print();
 	
 
 }

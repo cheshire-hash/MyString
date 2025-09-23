@@ -181,11 +181,11 @@ MyString MyString::operator+(MyString& b)
 	return temp;
 }
 
-MyString MyString::operator-(char* c)
+MyString MyString::operator-(const char* c)
 {
 	MyString temp(*this);
-	for (int i = 0; i < temp.lenght; i++) {
-		temp.MyDelChr(c);
+	for (int i = 0; c[i] != '\0'; i++) {
+		temp.MyDelChr(c[i]);
 	}
 	return temp;
 }
