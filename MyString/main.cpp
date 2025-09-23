@@ -20,6 +20,8 @@ int main() {
 	MyString a = move(obj1);
 	a.Print();
 	a.ShowCount();
+	MyString b = a + obj2;
+	b.Print();
 	
 
 }

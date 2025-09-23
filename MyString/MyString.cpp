@@ -146,7 +146,7 @@ int MyString::MyStrCmp(MyString& b)
 //		str = newstr;
 //		lenght = newsize;
 //	}
-//}
+//} DONT WORK
 
 void MyString::Print()
 {
