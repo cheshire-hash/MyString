@@ -24,6 +24,7 @@ public:
 	static int GetCount();
 	static void ShowCount();
 	MyString operator+(MyString& b);
+	MyString operator-(char* c);
  
 };
 
