@@ -31,6 +31,11 @@ MyString::~MyString()
 	count--;
 }
 
+MyString MyString::GetString()
+{
+	return MyString();
+}
+
 MyString::MyString(const MyString& st)
 {
 	str = new char[strlen(st.str) + 1]; //or [strlen(len) + 1]
@@ -166,5 +171,13 @@ int MyString::GetCount()
 void MyString::ShowCount()
 {
 	cout << MyString::GetCount() << endl;
+}
+
+MyString MyString::operator+(MyString& b)
+{
+	MyString temp(*this);
+	strcpy_s(temp.str, lenght + 1, str);
+	temp.MyStrCat(b);
+	return temp;
 }
 

@@ -10,6 +10,7 @@ public:
 	MyString(int size);
 	MyString(const char* st);
 	~MyString();
+	MyString GetString();
 	MyString(const MyString& obj);
 	bool MyStrStrt(const char* str);
 	int MyStrlen(); //возвращает длину строки
@@ -22,6 +23,7 @@ public:
 	MyString(MyString&& obj);
 	static int GetCount();
 	static void ShowCount();
+	MyString operator+(MyString& b);
  
 };
 
