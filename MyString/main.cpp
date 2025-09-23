@@ -24,6 +24,8 @@ int main() {
 	b.Print();
 	MyString c = b - "or";
 	c.Print();
+	MyString d = c - "l";
+	d.Print();
 	
 
 }
