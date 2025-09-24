@@ -29,6 +29,8 @@ public:
 	MyString operator-(const char* c);	
 	MyString& operator++();
 	MyString operator++(int);
+	MyString& operator--();
+
  
 };
 

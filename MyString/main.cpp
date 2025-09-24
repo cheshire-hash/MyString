@@ -32,6 +32,7 @@ int main() {
 	++str1;
 	cout << "After prefix increment:" << endl;
 	str1.ShowLen();
-
+	--str1;
+	str1.Print();
 
 }

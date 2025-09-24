@@ -231,3 +231,11 @@ MyString MyString::operator++(int)
 	lenght = lenght + space;
 	return temp;
 }
+
+MyString& MyString::operator--()
+{
+	if (lenght > 0) {
+		this->MyDelChr(str[lenght - 2]); 
+	}
+	return *this;
+}
