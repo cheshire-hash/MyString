@@ -34,5 +34,8 @@ int main() {
 	str1.ShowLen();
 	--str1;
 	str1.Print();
+	MyString str2("World");
+	str1 = str2;
+	str1.Print();
 
 }
