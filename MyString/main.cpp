@@ -28,11 +28,9 @@ int main() {
 	d.Print();*/
 	MyString str1("Hello");
 	str1.Print();
-	++str1;
-	cout << "After prefix increment:";
-	str1.Print();
 	str1.ShowLen();
-	str1++;
+	++str1;
+	cout << "After prefix increment:" << endl;
 	str1.ShowLen();
 
 
