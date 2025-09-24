@@ -241,6 +241,16 @@ MyString& MyString::operator--()
 	return *this;	
 }
 
+MyString MyString::operator--(int)
+{
+	MyString temp(*this);
+	if (lenght > 0) {
+		this->MyDelChr(str[lenght - 2]);
+	}
+	str[lenght - 1] = '\0';
+	return temp;
+}
+
 MyString& MyString::operator=(const MyString& obj)
 {
 	if (this == &obj) {
