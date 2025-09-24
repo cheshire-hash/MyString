@@ -33,7 +33,10 @@ public:
 	MyString operator--(int);
 	MyString& operator=(const MyString& obj);
 	MyString& operator=(MyString&& obj);
-
+	MyString& operator+=(MyString& b);
+	MyString& operator-=(const char* obj);
+	bool operator==(MyString& obj);
+	bool operator>(MyString& obj);
  
 };
 

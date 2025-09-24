@@ -37,5 +37,10 @@ int main() {
 	MyString str2("World");
 	str1 = str2;
 	str1.Print();
+	MyString str3 = move(str2);
+	str3 += str1;
+	str3.Print();
+	str3 -= "l";
+	str3.Print();
 
 }

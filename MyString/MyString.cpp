@@ -276,3 +276,40 @@ MyString& MyString::operator=(MyString&& obj)
 	obj.lenght = 0;
 	return *this;
 }
+
+MyString& MyString::operator+=(MyString& obj)
+{
+	this->MyStrCat(obj);
+	return *this;
+}
+
+MyString& MyString::operator-=(const char* obj)
+{
+	for (int i = 0; obj[i] != '\0'; i++) {
+		this->MyDelChr(obj[i]);
+	}
+	return *this;
+}
+
+bool MyString::operator==(MyString& obj)
+{
+	if (lenght != obj.lenght) {
+		return false; 
+	}
+	for (int i = 0; i < lenght; i++) {
+		if (str[i] != obj.str[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool MyString::operator>(MyString& obj)
+{
+	for (int i = 0; i < lenght && i < obj.lenght; i++) {
+		if (str[i] > obj.str[i]) return true;
+		if (str[i] < obj.str[i]) return false;
+	}
+	return 0;
+}
+
