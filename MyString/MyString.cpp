@@ -41,7 +41,7 @@ MyString::MyString(const MyString& st)
 	str = new char[strlen(st.str) + 1]; //or [strlen(len) + 1]
 	strcpy_s(str, strlen(st.str) + 1, st.str); //or strlen(len) + 1
 	lenght = st.lenght;
-	cout << "Copy constructer";
+	cout << "Copy constructer" << endl;
 	count++;
 }
 
@@ -173,6 +173,16 @@ void MyString::ShowCount()
 	cout << MyString::GetCount() << endl;
 }
 
+int MyString::GetLen()
+{
+	return lenght;
+}
+
+void MyString::ShowLen()
+{
+	cout << MyString::GetLen() << endl;
+}
+
 MyString MyString::operator+(MyString& b)
 {
 	MyString temp(*this);
@@ -203,4 +213,21 @@ MyString& MyString::operator++() {
 	str = newstr;
 	lenght = lenght + space;
 	return *this;
+}
+
+MyString MyString::operator++(int)
+{
+	MyString temp(*this);
+	int space = 1;
+	int nullterminator = 1;
+	char* newstr = new char[lenght + space + nullterminator];
+	if (str != nullptr) {
+		strcpy_s(newstr, lenght + space + nullterminator, str);
+	}
+	newstr[lenght] = ' ';
+	newstr[lenght + space] = '\0';
+	delete[] str;
+	str = newstr;
+	lenght = lenght + space;
+	return temp;
 }

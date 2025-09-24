@@ -23,9 +23,12 @@ public:
 	MyString(MyString&& obj);
 	static int GetCount();
 	static void ShowCount();
+	int GetLen();
+	void ShowLen();
 	MyString operator+(MyString& b);
 	MyString operator-(const char* c);	
 	MyString& operator++();
+	MyString operator++(int);
  
 };
 

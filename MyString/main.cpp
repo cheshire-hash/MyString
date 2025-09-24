@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-	MyString obj1("Hello");
+	/*MyString obj1("Hello");
 	obj1.Print();
 	MyString obj2 = obj1;
 	obj2.Print();
@@ -25,7 +25,15 @@ int main() {
 	MyString c = b - "or";
 	c.Print();
 	MyString d = c - "l";
-	d.Print();
-	
+	d.Print();*/
+	MyString str1("Hello");
+	str1.Print();
+	++str1;
+	cout << "After prefix increment:";
+	str1.Print();
+	str1.ShowLen();
+	str1++;
+	str1.ShowLen();
+
 
 }
