@@ -237,5 +237,20 @@ MyString& MyString::operator--()
 	if (lenght > 0) {
 		this->MyDelChr(str[lenght - 2]); 
 	}
+	str[lenght - 1] = '\0';
+	return *this;	
+}
+
+MyString& MyString::operator=(const MyString& obj)
+{
+	if (this == &obj) {
+		return *this;
+	}
+	if (str != nullptr) {
+		delete[] str;
+	}
+	str = new char[strlen(obj.str) + 1];
+	strcpy_s(str, strlen(obj.str) + 1, obj.str);
+	lenght = obj.lenght;
 	return *this;
 }

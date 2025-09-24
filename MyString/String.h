@@ -30,6 +30,8 @@ public:
 	MyString& operator++();
 	MyString operator++(int);
 	MyString& operator--();
+	MyString operator--(int);
+	MyString& operator=(const MyString& obj);
 
  
 };
