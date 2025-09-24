@@ -25,6 +25,7 @@ public:
 	static void ShowCount();
 	MyString operator+(MyString& b);
 	MyString operator-(const char* c);	
+	MyString& operator++();
  
 };
 

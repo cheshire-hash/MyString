@@ -190,3 +190,17 @@ MyString MyString::operator-(const char* c)
 	return temp;
 }
 
+MyString& MyString::operator++() {
+	int space = 1;
+	int nullterminator = 1;
+	char* newstr = new char[lenght + space + nullterminator];
+	if (str != nullptr) {
+		strcpy_s(newstr, lenght + space + nullterminator, str);
+	}
+	newstr[lenght] = ' ';
+	newstr[lenght + space] = '\0';
+	delete[] str;
+	str = newstr;
+	lenght = lenght + space;
+	return *this;
+}
