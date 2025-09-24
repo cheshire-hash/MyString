@@ -264,3 +264,15 @@ MyString& MyString::operator=(const MyString& obj)
 	lenght = obj.lenght;
 	return *this;
 }
+
+MyString& MyString::operator=(MyString&& obj)
+{
+	if (this->str != nullptr) {
+		delete[] this->str;
+	}
+	this->str = obj.str;
+	obj.str = nullptr;
+	this->lenght = obj.lenght;
+	obj.lenght = 0;
+	return *this;
+}

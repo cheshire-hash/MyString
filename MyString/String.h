@@ -32,6 +32,7 @@ public:
 	MyString& operator--();
 	MyString operator--(int);
 	MyString& operator=(const MyString& obj);
+	MyString& operator=(MyString&& obj);
 
  
 };
