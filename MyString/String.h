@@ -37,6 +37,7 @@ public:
 	MyString& operator-=(const char* obj);
 	bool operator==(MyString& obj);
 	bool operator>(MyString& obj);
+	bool operator<(MyString& obj);
  
 };
 

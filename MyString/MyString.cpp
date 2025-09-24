@@ -310,6 +310,15 @@ bool MyString::operator>(MyString& obj)
 		if (str[i] > obj.str[i]) return true;
 		if (str[i] < obj.str[i]) return false;
 	}
-	return 0;
+	return false;
+}
+
+bool MyString::operator<(MyString& obj)
+{
+	for (int i = 0; i < lenght && i < obj.lenght; i++) {
+		if (str[i] < obj.str[i]) return true;
+		if (str[i] > obj.str[i]) return false;
+	}
+	return false;
 }
 
